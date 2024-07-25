@@ -1,0 +1,737 @@
+<!doctype html>
+<html data-bs-theme="auto">
+<head>
+   
+   
+    <title>SAID</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+
+
+    <!-- area dos ccs-->
+    <style>
+        /* Geral da pagina */
+
+         body {
+      background-color: #ffffff; /* Substitua essa cor pela desejada */
+    }
+      
+        .navbar {
+            background-color: #2D1F8C; /* cor da navbar e das divisoes de topicos*/
+        }
+        .btn-primary, .btn-outline-secondary {
+            color: #000000; /* cor do texto dos botoesa */
+        }
+        .btn-primary {
+            background-color: #c8d910; /* primeira cor dos botoes */
+            border-color: #f8f4ff; /* borda */
+        }
+        .btn-outline-secondary {
+            border-color: #000104; /* barda secundaria */
+        }
+        .btn-outline-secondary:hover {
+            background-color: #00e304; /* cor secundaria botoes */
+            color: #ffffff; 
+        }
+       
+        .nav-link {
+            color: #ffffff !important; /* cor dos botoes da navbar */
+        }
+
+        /* ajustes gerais */
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #e0dce8;
+            --bs-btn-hover-border-color: #ffffff;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #ffffff;
+            --bs-btn-active-border-color: #ffffff;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+<!-- navbar 2 padin-->
+<style>.navbar-nav {
+  margin-left:auto; /* alinhar */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 50px; /* espaçamentos */
+}
+
+.navbar-nav .nav-link {
+  padding: 10px;
+}
+
+.navbar-nav .btn {
+  margin-left: 100px; /* espaçamento botao */
+}</style>
+
+<!--- imagem 1 css-->
+ <style>
+    /* Estilo para a imagem ocupar toda a largura */
+    .imagem-horizontal {
+      width: 100%;
+      height: auto;
+    }
+    /* Ajuste para a div que contém a imagem */
+    .container-imagem {
+      width: 100%;
+      overflow: hidden;
+    }
+  </style>
+
+   
+  </style>
+  <!--- CAROSEL 2 CCS-->
+
+  <style>
+    /* estilo para o carrossel ocupar toda a largura */
+    .carrossel-horizontal {
+      width: 100%;
+    }
+    /* ajustes de tamanho das imagens do carrossel */
+    .carousel-inner img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    /* espaçamento para o texto abaixo do carrossel */
+    .texto-carrossel {
+      padding: 20px;
+      text-align: center;
+    }
+    /* estilo para o botão */
+    .botao-ajustavel {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 1.2em;
+    }
+  </style>
+
+
+
+  <!-- CARROSEL 3 CSS   -->
+  <style>
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel {
+        flex: 3;
+    }
+    .text-area {
+        flex: 1;
+        padding: 20px;
+    }
+    .carousel-item img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+    .text-area p {
+        margin-bottom: 10px;
+    }
+    .text-area button {
+        --bd-violet-bg: #000000;
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-bg: #333333;
+        --bs-btn-hover-border-color: #333333;
+        --bs-btn-color: #ffffff;
+        --bs-btn-hover-color: #ffffff;
+        padding: 10px 20px;
+    }
+</style>
+<!--- css rede sociais-->
+
+<style>
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .social-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+</style>
+<style>
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .social-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+</style>
+<!-- mapa css-->
+<style>
+    #map {
+        width: 100%;
+        height: 400px;
+    }
+    .location-container {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+</style>
+<!--- trabalhe conosco css-->
+<style>
+    .trabalhe-conosco {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 55vh;
+        text-align: center;
+        background-color: #ffffff;
+    }
+    .conteudo {
+        max-width: 1200px;
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 100px;
+    }
+</style>
+<!-- footer css-->
+<style>
+    /* Garante que  footer rodapé fique no fundo */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+
+    /* cores e tamanhos*/
+   
+
+    .footer {
+        background-color: #f8f9fa; /* Cor de fundo do footer */
+        color: #6c757d; /* Cor do texto no foote */
+        padding: 20px 0; /* espaçamento interno superior e inferior */
+        text-align: center; /* alinhar o texto  */
+        border-top: 1px solid #dee2e6; /* borda  */
+        position: bottom; /* faz o foter fique fixo no fundo */
+        bottom: 0;
+        left: 0;
+        width: 100%; /* faz o foter ocupe toda a largura da tela horizontal */
+    }
+</style>
+
+
+</head>
+<body>
+
+
+  <!-- Navbar 1 -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+  
+  <!-- Navbar 2 -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Manutenção">Manutenção</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Locação">Locação</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Localidade">Localidade</a>
+                  </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#Trabalhe">Trabalhe Conosco</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contatos">Contatos</a>
+            </li>
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+        </div>
+      </nav>
+          <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+        </div>
+      </nav>
+<!-- CAROSSEL 1-->
+<div class="container-imagem" id="Inicio">
+    <img src="imagens said/logo/logo SAID melhor 3.png" alt="Imagem em Tela Cheia" class="imagem-horizontal">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  
+   <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+
+<!-- sobre nos -->
+<div class="px-4 py-5 my-5 text-center" id="Sobre">
+      
+    <h1 class="display-5 fw-bold text-body-emphasis">Sobre Nós</h1>
+    <img class="d-block mx-auto mb-4" src="imagens said/logo/LOGO SAID SOBRE NOS.png" alt="" width="500" height="300">
+  
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Quem Somos</h2>
+            <p class="text-justify">Atuando há mais de 20 anos na área de locação de Retroescavadeiras e Caminhões Pipa, a SAID Prestação de Serviços Ltda traz soluções para empresas que necessitam de equipamentos de qualidade com alta produtividade. 
+
+                Contando com uma equipe capacitada a fim de proporcionar agilidade, segurança e tranquilidade ao cliente, nossa empresa trabalha também no segmento de reparação automotiva leve e pesado. 
+                
+                Localizada na cidade de Itabira/MG a empresa prima pelo atendimento diferenciado e respeito aos seus clientes.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>O Que Fazemos</h2>
+            <p class="text-justify">Além de oferecermos diversos equipamentos, toda nossa prestação de serviços é feita com excelência. Nossa empresa tem experiência no mercado e está preparada para atender as necessidades do cliente, com objetivo de exceder suas expectativas, com relação a prazo, preço e qualidade, fazendo disso o seu diferencial. 
+</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Vamos nos conectar</h2>
+            <p class="text-justify">Junte-se à nossa rede de excelência e aproveite todos os benefícios de uma parceria!
+
+                Se você está interessado em locar nossos equipamentos ou busca serviços de manutenção mecânica, é fácil começar: entre em contato conosco para uma consulta personalizada e descubra como podemos atender às suas necessidades. 
+               
+               Para você que deseja integrar nossa equipe de trabalho, venha fazer a diferença! Entre em contato hoje mesmo e dê o próximo passo em sua jornada conosco!</p>
+        </div>
+    </div>
+</div>
+
+  <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+<br>
+<!--carrosel 2--->
+
+
+  <div class="container-fluid p-0" id="Manutenção">
+    <div id="carouselManutencao" class="carousel slide carrossel-horizontal" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselManutencao" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselManutencao" data-slide-to="1"></li>
+        <li data-target="#carouselManutencao" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imagens said/manutenção/manutenção 5.jpg" class="d-block w-100" alt="Imagem 1">
+        </div>
+        <div class="carousel-item">
+          <img src="imagens said/manutenção/manutenção 7.jpg" class="d-block w-100" alt="Imagem 2">
+        </div>
+        <div class="carousel-item">
+          <img src="imagens said/manutenção/manutenção 2.jpg" class="d-block w-100" alt="Imagem 3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselManutencao" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselManutencao" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+    <div class="texto-carrossel">
+      <h1 class="card-title">Manutenção de veículos e máquinas</h1>
+      <p class="card-text">Oferecemos serviços de manutenção de alta qualidade, para garantir que seu veículo e seu equipamentos estejam sempre em perfeito funcionamento.</p>
+     <a href="https://wa.me/553128402029?text=Ol%C3%A1,%20eu%20gostaria%20de%20agendar%20uma%20manuten%C3%A7%C3%A3o." button class="btn btn-primary botao-ajustavel">Agende Já a sua manutenção</button> </a>
+    </div>
+  </div>
+
+
+   <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+
+<!--carrosel 3--> 
+
+
+<div class="carousel-container" id="Locação">
+  <div id="carouselExample" class="carousel slide carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="imagens said/veiculos/caminhao pipa 1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="imagens said/veiculos/caminhao pipa 2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="imagens said/veiculos/caminhao pipa 3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="imagens said/veiculos/CAMINHAO PIPA 4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="imagens said/veiculos/TRATOR 1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="imagens said/veiculos/MAQUINA 1.jpg" class="d-block w-100" alt="...">
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+  <div class="text-area">
+    <h1>Locação de Caminhões Pipa, equipamentos.</h1>
+      <p class="text-justify">Seja bem-vindo ao nosso serviço de locação de Caminhões Pipa e Retroescavadeira. Precisando de caminhão pipa e de equipamentos pesados para o seu projeto de construção ou terraplanagem? Temos exatamente o que você precisa! Atendemos empresas de sondagem, terraplanagem e de distribuição de água potável. Nossa frota diversificada e bem mantida e garante que você sempre tenha à disposição o equipamento ideal para qualquer desafio.
+      </p>
+      
+     <a href="https://wa.me/553128402029?text=Ol%C3%A1,%20eu%20gostaria%20de%20saber%20mais%20sobre%20a%20loca%C3%A7%C3%A3o%20de%20ve%C3%ADculos,%20equipamentos%20e%20servi%C3%A7os" button class="btn btn-primary">Saiba Mais</button> </a>
+  </div>
+</div>
+
+ <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+
+<!--- mapa-->
+<div class="container #map" id="Localidade">
+    <h2>Localidade</h2>
+    <div class="row location-container">
+        <div class="col-md-6">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1624323056797!2d-43.22913018468537!3d-19.61963508679798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaaaaaaaaaaaaaa%3A0xbbbbbbbbbbbbbbbb!2sR.%20Concei%C3%A7%C3%A3o%20Souza%20Moreira%2C%2080%20-%20Itabira%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1598888888888!5m2!1spt-BR!2sbr" 
+                class="map" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="col-md-6">
+            <h3>Endereço</h3>
+            <p>R. Conceição Souza Moreira, Número 80, Itabira, Minas Gerais</p>
+            <p class="text-justify">Descubra como nossos serviços podem impulsionar seus projetos! Convidamos você a conhecer a qualidade e eficiência que oferecemos em locação de máquinas pesadas e manutenção de equipamentos. Nossa equipe está pronta para entender suas necessidades e fornecer soluções sob medida, garantindo que seus equipamentos estejam sempre em perfeito funcionamento. Entre em contato conosco para saber mais sobre nossos serviços e como podemos ajudar a otimizar suas operações. Estamos prontos para oferecer a melhor experiência em equipamentos e manutenção para você!</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+
+   
+
+     <!--trbalhe conostco-->
+<div class="trabalhe-conosco" id="Trabalhe">
+    <div class="conteudo">
+        <h2>Trabalhe Conosco</h2>
+        <p>Envie o seu currículo</p>
+        <form action="mailto:saidlocservicos@gmail.com " method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="curriculo">Anexar Currículo:</label>
+                <input type="file" class="form-control-file" id="curriculo" name="curriculo">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+
+ <!-- espaço roxo -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    </div>
+  </nav>
+
+<!-- redes soicais-->
+
+<div class="container my-5" id="contatos">
+    <h2>Redes Sociais</h2>
+    <br>
+    <br>
+    <br>
+    
+
+    <div class="row">
+        <div class="col-md-4 social-item">
+            <img src="imagens said/whatsapp.png" alt="WhatsApp" class="social-icon">
+            <p>Nos siga no WhatsApp para receber as últimas novidades e atualizações.</p>
+            <a href="https://wa.me/553128402029?text=Ol%C3%A1,%20eu%20gostaria%20de%20receber%20atendimento." class="btn btn-success ml-2" target="_blank">Visitar</a>
+        </div>
+        <div class="col-md-4 social-item">
+            <img src="imagens said/instagram.png" alt="Instagram" class="social-icon">
+            <p>Acompanhe nossas postagens no Instagram e fique por dentro das novidades.</p>
+            <a href="https://www.instagram.com/saidlocacao?igsh=dm5lM2lqMjZhNXFv" class="btn btn-primary ml-2" target="_blank">Visitar</a>
+        </div>
+        <div class="col-md-4 social-item">
+            <img src="imagens said/facebook.png" alt="Facebook" class="social-icon">
+            <p>Curta nossa página no Facebook para se conectar conosco e com outros membros.</p>
+            <a href="https://www.facebook.com/profile.php?id=100065101928289&mibextid=ZbWKwL" class="btn btn-primary ml-2" target="_blank">Visitar</a>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Botstrrap Js -->
+   <footer class="footer" >
+        <div class="container">
+            <p>Email: saidlocservicos@gmail.com</p>
+            <p>Telefone: (31) 2840-2029</p>
+            <p> Seg à Quint 7:00 ás 17:00 Sex e Sab Somente serviços agendados.</p>
+            <p>&copy; 2024 SAID. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+   
+</body>
+
+</html>
